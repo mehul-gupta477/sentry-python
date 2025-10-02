@@ -88,6 +88,9 @@ def test_environment():
         if process.poll() is None:
             process.kill()
 
+        # Close the debug log file
+        debug_log.close()
+
 
 @pytest.fixture(autouse=True)
 def clear_before_test(test_environment):

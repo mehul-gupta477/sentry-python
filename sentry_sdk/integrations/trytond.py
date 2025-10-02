@@ -7,7 +7,7 @@ from trytond.exceptions import TrytonException  # type: ignore
 from trytond.wsgi import app  # type: ignore
 
 
-# TODO: trytond-worker, trytond-cron and trytond-admin intergations
+# TODO: trytond-worker, trytond-cron and trytond-admin integrations
 
 
 class TrytondWSGIIntegration(Integration):
