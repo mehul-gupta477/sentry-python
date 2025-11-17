@@ -57,6 +57,10 @@ class NoOpIntegration(Integration):
     @staticmethod
     def setup_once():  # type: () -> None
         pass
+    
+    @staticmethod
+    def setup_once():  # type: () -> None
+        pass
 
     def __eq__(self, __value):  # type: (object) -> bool
         """
