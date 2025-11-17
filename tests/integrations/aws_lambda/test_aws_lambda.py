@@ -73,6 +73,12 @@ def test_environment():
 
         def before_test():
             server.clear_envelopes()
+    try:
+        # Wait for SAM to be ready
+        LocalLambdaStack.wait_for_stack()
+
+        def before_test():
+            server.clear_envelopes()
 
         yield {
             "stack": stack,
