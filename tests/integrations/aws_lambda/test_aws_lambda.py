@@ -20,6 +20,8 @@ SAM_TEMPLATE_FILE = "sam.template.yaml"
 
 @pytest.fixture(scope="session", autouse=True)
 def test_environment():
+def test_environment():
+def test_environment():
     print("[test_environment fixture] Setting up AWS Lambda test infrastructure")
 
     # Create a Docker network
