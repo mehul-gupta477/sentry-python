@@ -32,6 +32,14 @@ from sentry_sdk.integrations import (
     Integration,
     setup_integrations,
 )
+)
+from sentry_sdk.integrations import (
+    _AUTO_ENABLING_INTEGRATIONS,
+    _DEFAULT_INTEGRATIONS,
+    DidNotEnable,
+    Integration,
+    setup_integrations,
+)
 from sentry_sdk.integrations.logging import LoggingIntegration
 from sentry_sdk.integrations.stdlib import StdlibIntegration
 from sentry_sdk.scope import add_global_event_processor
@@ -76,6 +84,24 @@ def test_processors(sentry_init, capture_events):
 
     assert event["exception"]["values"][0]["value"] == "aha! whatever"
 
+def test_processors(sentry_init, capture_events):
+    sentry_init()
+    events = capture_events()
+
+    def error_processor(event, exc_info):
+        event["exception"]["values"][0]["value"] += " whatever"
+        return event
+
+    sentry_sdk.get_isolation_scope().add_error_processor(error_processor, ValueError)
+
+    try:
+        raise ValueError("aha!")
+    except Exception:
+        capture_exception()
+
+    (event,) = events
+
+    assert event["exception"]["values"][0]["value"] == "aha! whatever"
 
 class ModuleImportErrorSimulator:
     def __init__(self, modules, error_cls=DidNotEnable):
