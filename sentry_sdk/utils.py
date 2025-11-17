@@ -22,6 +22,9 @@ try:
     from builtins import BaseExceptionGroup
 except ImportError:
     # Python 3.10 and below
+    # Python 3.10 and below
+    # Python 3.10 and below
+    # Python 3.10 and below
     BaseExceptionGroup = None  # type: ignore
 
 import sentry_sdk
