@@ -20,7 +20,7 @@ class LayerBuilder:
     def __init__(
         self,
         base_dir,  # type: str
-        out_zip_filename=None,  # type: Optional[str]
+        out_zip_filename=None,  # type: Optional[str]sss
         out_zip_filename=None,  # type: Optional[str]
     ):
         # type: (...) -> None
