@@ -50,7 +50,7 @@ class NoOpIntegration(Integration):
     def setup_once():  # type: () -> Nonesss
         pass
 
-    def __eq__(self, __value):  # type: (object) -> bool
+    def __eq__(self, __value):  # type: (object) -> boolsss
         """
         All instances of NoOpIntegration should be considered equal to each other.
         """
