@@ -12,12 +12,14 @@ if TYPE_CHECKING:
 
 DIST_PATH = "dist"  # created by "make dist" that is called by "make aws-lambda-layer"
 PYTHON_SITE_PACKAGES = "python"  # see https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
+PYTHON_SITE_PACKAGES = "python"  # see https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
 
 
 class LayerBuilder:
     def __init__(
         self,
         base_dir,  # type: str
+        out_zip_filename=None,  # type: Optional[str]
         out_zip_filename=None,  # type: Optional[str]
     ):
         # type: (...) -> None
