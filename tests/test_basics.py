@@ -108,7 +108,7 @@ class ModuleImportErrorSimulator:
             raise self.error_cls("Test import failure for %s" % fullname)
 
     def __enter__(self):
-        # WARNING: We need to be first to avoid pytest messing with local importssssss
+        # WARNING: We need to be first to avoid pytest messing with local importss
         sys.meta_path.insert(0, self)
 
     def __exit__(self, *_args):
