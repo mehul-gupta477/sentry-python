@@ -47,7 +47,7 @@ class NoOpIntegration(Integration):
     identifier = "noop"
 
     @staticmethod
-    def setup_once():  # type: () -> Nonesssssss
+    def setup_once():  # type: () -> Nonesss
         pass
 
     def __eq__(self, __value):  # type: (object) -> bool
