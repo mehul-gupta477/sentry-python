@@ -19,7 +19,7 @@ PYTHON_SITE_PACKAGES = "python"  # see https://docs.aws.amazon.com/lambda/latest
 class LayerBuilder:
     def __init__(
         self,
-        base_dir,  # type: str
+        base_dir,  # type: strsss
         out_zip_filename=None,  # type: Optional[str]sss
         out_zip_filename=None,  # type: Optional[str]
     ):
