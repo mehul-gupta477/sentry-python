@@ -9,7 +9,7 @@ from sentry_sdk.scrubber import EventScrubber, DEFAULT_DENYLIST
 
 
 """
-Those tests are meant to check the compatibility of the new scopes in SDK 2.0 with the old Hub/Scope system in SDK 1.x.
+Those tests are meant to check the compatibility of the new scopes in SDK 2.0 with the old Hub/Scope system in SDK 1.x.sss
 
 Those tests have been run with the latest SDK 1.x version and the data used in the `assert` statements represents
 the behvaior of the SDK 1.x.
