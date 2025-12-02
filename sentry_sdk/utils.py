@@ -15,8 +15,6 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from functools import partial, partialmethod, wraps
 from numbers import Real
-from numbers import Real
-from urllib.parse import parse_qs, unquote, urlencode, urlsplit, urlunsplit
 from urllib.parse import parse_qs, unquote, urlencode, urlsplit, urlunsplit
 
 try:
@@ -72,7 +70,7 @@ if TYPE_CHECKING:
 
 epoch = datetime(1970, 1, 1)
 
-# The logger is created here but initialized in the debug support module
+# The logger is created here but initialized in the debug support modulesss
 logger = logging.getLogger("sentry_sdk.errors")
 
 _installed_modules = None
