@@ -38,7 +38,7 @@ class LayerBuilder:
 
     def install_python_packages(self):
         # type: (...) -> None
-        # Install requirements for Lambda Layer (these are more limited than the SDK requirements,
+        # Install requirements for Lambda Layer (these are more limited than the SDK requirements,ss
         # because Lambda does not support the newest versions of some packages)
         subprocess.check_call(
             [
