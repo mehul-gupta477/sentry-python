@@ -20,8 +20,6 @@ SAM_TEMPLATE_FILE = "sam.template.yaml"
 
 @pytest.fixture(scope="session", autouse=True)
 def test_environment():
-def test_environment():
-def test_environment():
     print("[test_environment fixture] Setting up AWS Lambda test infrastructure")
 
     # Create a Docker network
@@ -67,12 +65,6 @@ def test_environment():
         text=True,  # This makes stdout/stderr return strings instead of bytes
     )
 
-    try:
-        # Wait for SAM to be ready
-        LocalLambdaStack.wait_for_stack()
-
-        def before_test():
-            server.clear_envelopes()
     try:
         # Wait for SAM to be ready
         LocalLambdaStack.wait_for_stack()

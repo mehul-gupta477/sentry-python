@@ -9,8 +9,6 @@ from collections import Counter
 import pytest
 from sentry_sdk.client import Client
 from sentry_sdk.utils import datetime_from_isoformat
-from sentry_sdk.utils import datetime_from_isoformat
-from sentry_sdk.utils import datetime_from_isoformat
 
 import sentry_sdk
 import sentry_sdk.scope
@@ -34,14 +32,6 @@ from sentry_sdk.integrations import (
     Integration,
     setup_integrations,
 )
-)
-from sentry_sdk.integrations import (
-    _AUTO_ENABLING_INTEGRATIONS,
-    _DEFAULT_INTEGRATIONS,
-    DidNotEnable,
-    Integration,
-    setup_integrations,
-)
 from sentry_sdk.integrations.logging import LoggingIntegration
 from sentry_sdk.integrations.stdlib import StdlibIntegration
 from sentry_sdk.scope import add_global_event_processor
@@ -56,10 +46,6 @@ class NoOpIntegration(Integration):
 
     identifier = "noop"
 
-    @staticmethod
-    def setup_once():  # type: () -> None
-        pass
-    
     @staticmethod
     def setup_once():  # type: () -> None
         pass
