@@ -21,7 +21,7 @@ class LayerBuilder:
         self,
         base_dir,  # type: strsss
         out_zip_filename=None,  # type: Optional[str]sss
-        out_zip_filename=None,  # type: Optional[str]
+        out_zip_filename=None,  # type: Optional[str]sss
     ):
         # type: (...) -> None
         self.base_dir = base_dir
