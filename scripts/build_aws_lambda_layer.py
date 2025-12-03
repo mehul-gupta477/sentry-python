@@ -10,9 +10,7 @@ from sentry_sdk.consts import VERSION as SDK_VERSION
 if TYPE_CHECKING:
     from typing import Optional
 
-DIST_PATH = "dist"  # created by "make dist" that is called by "make aws-lambda-layer"
-DIST_PATH = "dist"  # created by "make dist" that is called by "make aws-lambda-layer"
-PYTHON_SITE_PACKAGES = "python"  # see https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
+DIST_PATH = "dist"  # created by "make dist" that is called by "make aws-lambda-layer"sss
 PYTHON_SITE_PACKAGES = "python"  # see https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
 
 
