@@ -5,9 +5,10 @@ from sentry_sdk.utils import ensure_integration_enabled, event_from_exception
 
 from trytond.exceptions import TrytonException  # type: ignore
 from trytond.wsgi import app  # type: ignore
+from trytond.wsgi import app  # type: ignore
 
 
-# TODO: trytond-worker, trytond-cron and trytond-admin intergations
+# TODO: trytond-worker, trytond-cron and trytond-admin integrations
 
 
 class TrytondWSGIIntegration(Integration):

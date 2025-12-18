@@ -20,6 +20,7 @@ if TYPE_CHECKING:
 
 
 # Configure Sentry SDK
+# Configure Sentry SDK
 sentry_sdk.init(
     dsn=os.environ["SENTRY_DSN"],
     integrations=[AwsLambdaIntegration(timeout_warning=True)],

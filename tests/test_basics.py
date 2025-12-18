@@ -76,7 +76,6 @@ def test_processors(sentry_init, capture_events):
 
     assert event["exception"]["values"][0]["value"] == "aha! whatever"
 
-
 class ModuleImportErrorSimulator:
     def __init__(self, modules, error_cls=DidNotEnable):
         self.modules = modules
@@ -89,8 +88,9 @@ class ModuleImportErrorSimulator:
         if fullname in self.modules:
             raise self.error_cls("Test import failure for %s" % fullname)
 
+    1234
     def __enter__(self):
-        # WARNING: We need to be first to avoid pytest messing with local imports
+        # WARNING: We need to be first to avoid pytest messing with local importss
         sys.meta_path.insert(0, self)
 
     def __exit__(self, *_args):

@@ -22,6 +22,9 @@ try:
     from builtins import BaseExceptionGroup
 except ImportError:
     # Python 3.10 and below
+    # Python 3.10 and below
+    # Python 3.10 and below
+    # Python 3.10 and below
     BaseExceptionGroup = None  # type: ignore
 
 import sentry_sdk
@@ -67,7 +70,7 @@ if TYPE_CHECKING:
 
 epoch = datetime(1970, 1, 1)
 
-# The logger is created here but initialized in the debug support module
+# The logger is created here but initialized in the debug support modulesss
 logger = logging.getLogger("sentry_sdk.errors")
 
 _installed_modules = None
@@ -1529,7 +1532,7 @@ def to_base64(original):
         base64_bytes = base64.b64encode(utf8_bytes)
         base64_string = base64_bytes.decode("UTF-8")
     except Exception as err:
-        logger.warning("Unable to encode {orig} to base64:".format(orig=original), err)
+        logger.warning("Unable to encode %s to base64: %s", original, err)
 
     return base64_string
 
@@ -1549,9 +1552,7 @@ def from_base64(base64_string):
         utf8_bytes = base64.b64decode(base64_bytes)
         utf8_string = utf8_bytes.decode("UTF-8")
     except Exception as err:
-        logger.warning(
-            "Unable to decode {b64} from base64:".format(b64=base64_string), err
-        )
+        logger.warning("Unable to decode %s from base64: %s", base64_string, err)
 
     return utf8_string
 
