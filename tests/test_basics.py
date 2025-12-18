@@ -47,34 +47,15 @@ class NoOpIntegration(Integration):
     identifier = "noop"
 
     @staticmethod
-    def setup_once():  # type: () -> Nonesss
+    def setup_once():  # type: () -> None
         pass
 
-    def __eq__(self, __value):  # type: (object) -> boolsss
+    def __eq__(self, __value):  # type: (object) -> bool
         """
         All instances of NoOpIntegration should be considered equal to each other.
         """
         return type(__value) == type(self)
 
-
-def test_processors(sentry_init, capture_events):
-    sentry_init()
-    events = capture_events()
-
-    def error_processor(event, exc_info):
-        event["exception"]["values"][0]["value"] += " whatever"
-        return event
-
-    sentry_sdk.get_isolation_scope().add_error_processor(error_processor, ValueError)
-
-    try:
-        raise ValueError("aha!")
-    except Exception:
-        capture_exception()
-
-    (event,) = events
-
-    assert event["exception"]["values"][0]["value"] == "aha! whatever"
 
 def test_processors(sentry_init, capture_events):
     sentry_init()
@@ -107,6 +88,7 @@ class ModuleImportErrorSimulator:
         if fullname in self.modules:
             raise self.error_cls("Test import failure for %s" % fullname)
 
+    1234
     def __enter__(self):
         # WARNING: We need to be first to avoid pytest messing with local importss
         sys.meta_path.insert(0, self)
